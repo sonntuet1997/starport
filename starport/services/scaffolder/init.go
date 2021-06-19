@@ -2,6 +2,7 @@ package scaffolder
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"path/filepath"
 	"time"
@@ -9,6 +10,7 @@ import (
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"
 	"github.com/gobuffalo/genny"
+	"github.com/sonntuet1997/react-starport"
 	"github.com/tendermint/starport/starport/pkg/giturl"
 	"github.com/tendermint/starport/starport/pkg/gomodulepath"
 	"github.com/tendermint/starport/starport/pkg/localfs"
@@ -34,17 +36,22 @@ func (s *Scaffolder) Init(tracer *placeholder.Tracer, name string, noDefaultModu
 	if err != nil {
 		return "", err
 	}
+	fmt.Println()
+	fmt.Println("pathInfo", pathInfo, err)
 	pwd, err := os.Getwd()
+	fmt.Println("pwd", pwd, err)
 	if err != nil {
 		return "", err
 	}
 	absRoot := filepath.Join(pwd, pathInfo.Root)
+	fmt.Println("absRoot", absRoot)
+	fmt.Println("tracer", tracer, noDefaultModule)
+	fmt.Println()
 
 	// create the project
 	if err := s.generate(tracer, pathInfo, absRoot, noDefaultModule); err != nil {
 		return "", err
 	}
-
 	if err := s.finish(absRoot, pathInfo.RawPath); err != nil {
 		return "", err
 	}
@@ -111,6 +118,12 @@ func (s *Scaffolder) generate(
 			return err
 		}
 
+	}
+
+	// generate the react app.
+	reactPath := filepath.Join(absRoot, "react")
+	if err := localfs.Save(react.Boilerplate(), reactPath); err != nil {
+		return err
 	}
 
 	// generate the vue app.

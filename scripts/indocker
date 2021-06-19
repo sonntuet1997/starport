@@ -23,7 +23,8 @@ RUN echo '\n\
 alias a="cd /apps" \n\
 alias s="cd /src " \n\
 alias c="(cd && GLOBIGNORE='.bashrc:.cache:.config:.npm:.profile'; rm -rf *) && rm -rf /apps/*" \n\
-alias i="(s && go install ./...)"' > ~/.bashrc
+alias i="(s && go install ./...)" \n\
+alias d="(s && rm -rf xxx && i && starport app github.com/sonntuet1997/xxx)"' > ~/.bashrc
 EOF
 }
 

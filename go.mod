@@ -17,9 +17,12 @@ require (
 	github.com/emicklei/proto v1.9.0
 	github.com/fatih/color v1.10.0
 	github.com/go-git/go-git/v5 v5.1.0
+	github.com/gobuffalo/flect v0.2.3 // indirect
 	github.com/gobuffalo/genny v0.6.0
-	github.com/gobuffalo/logger v1.0.3
+	github.com/gobuffalo/here v0.6.2 // indirect
+	github.com/gobuffalo/logger v1.0.4
 	github.com/gobuffalo/packd v1.0.0
+	github.com/gobuffalo/packr/v2 v2.8.1 // indirect
 	github.com/gobuffalo/plush v3.8.3+incompatible
 	github.com/gobuffalo/plushgen v0.1.2
 	github.com/goccy/go-yaml v1.8.0
@@ -39,7 +42,9 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/radovskyb/watcher v1.0.7
 	github.com/rdegges/go-ipify v0.0.0-20150526035502-2d94a6a86c40
+	github.com/rogpeppe/go-internal v1.8.0 // indirect
 	github.com/rs/cors v1.7.0
+	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
@@ -48,9 +53,12 @@ require (
 	github.com/tendermint/tendermint v0.34.9
 	github.com/tendermint/vue v0.1.49
 	go.opencensus.io v0.22.6 // indirect
+	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e // indirect
 	golang.org/x/mod v0.4.2
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d
+	golang.org/x/sys v0.0.0-20210616094352-59db8d763f22 // indirect
+	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b
+	golang.org/x/tools v0.1.3 // indirect
 	google.golang.org/genproto v0.0.0-20210426193834-eac7f76ac494 // indirect
 	google.golang.org/grpc v1.37.0 // indirect
 )
